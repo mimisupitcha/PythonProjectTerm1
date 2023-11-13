@@ -42,7 +42,6 @@ class EnneaFinanceExplorer:
         self.intro_paragraph.pack(padx=10, pady=10)
         self.button_enneagram.pack(pady=25)
 
-
     def enneagram_test(self):
         # Withdraw the current window
         self.master.iconify()
@@ -66,7 +65,6 @@ class EnneagramQuestion:
         self.master.geometry("1200x1000")
         self.master.resizable(height=True, width=True)
 
-        #self.scores = {i: 0 for i in "ABCDEFGHI"}
         self.scores = []
 
         self.questions = [
@@ -107,8 +105,6 @@ class EnneagramQuestion:
             Question("I've been appreciated for my unsinkable spirit and great sense of humour.", "I've been appreciated for my quiet strength and exceptional generosity.", "I", "F"),
             Question("Much of my success has been due to my talent for making a favourable impression.", "Much of my success has been achieved despite my lack of interest in developing 'interpersonal skills.'", "C", "H"),
 
-
-            # add your questions!
         ]
         self.question_index = 0
 
@@ -131,10 +127,6 @@ class EnneagramQuestion:
 
         self.set_question()
 
-
-        
-        #self.master.mainloop()
-
     def set_question(self):
         question = self.questions[self.question_index]
         self.label_a.config(text=question.choice_a, font= ['Arial',28, 'bold'])
@@ -156,7 +148,6 @@ class EnneagramQuestion:
     def button_none_press(self):
         self.change_question()
 
-
     def change_question(self):
         self.question_index += 1
         if self.question_index == len(self.questions):
@@ -167,7 +158,6 @@ class EnneagramQuestion:
         else:
             self.set_question()
     
-
     def get_top_three_letters(self):
         #print(self.scores)
         if not self.scores:
@@ -185,11 +175,6 @@ class EnneagramQuestion:
         self.master = tk.Tk()  # Reinitialize the Tkinter window
         main()
 
-
-
- 
-
-
 class LastThreeChoice:
     def __init__(self, master, top_three_letters):
         self.master = master
@@ -197,7 +182,6 @@ class LastThreeChoice:
         self.master.geometry("1200x1000")
         self.master.resizable(height=True, width=True)
         self.check_top3_letters(top_three_letters)
-
     
     def check_top3_letters(self, top_three_letters):
         # Sort the letters based on their frequency in descending order
@@ -223,9 +207,6 @@ class LastThreeChoice:
                 self.Type8_brief()
             elif letter == 'A':
                 self.Type9_brief()
-
-                
-
         
     def Type1_brief(self):
         self.frame = tk.LabelFrame(self.master, text= 'Type1',pady=10, padx=5)
@@ -237,6 +218,7 @@ class LastThreeChoice:
         self.label_title.pack()
         self.label_detail.pack()
         self.button1.pack()
+
     def Type2_brief(self):
         self.frame = tk.LabelFrame(self.master, text= 'Type2',pady=10, padx=5)
         self.label_title = tk.Message(self.frame, text= "The HELPER", font= ['Arail',30,'bold'], width=750)
@@ -258,6 +240,7 @@ class LastThreeChoice:
         self.label_title.pack()
         self.label_detail.pack()
         self.button3.pack()
+
     def Type4_brief(self):
         self.frame = tk.LabelFrame(self.master, text= 'Type4',pady=10, padx=5)
         self.label_title = tk.Message(self.frame, text= "The INDIVIDUALIST ", font= ['Arail',30,'bold'], width=750)
@@ -268,6 +251,7 @@ class LastThreeChoice:
         self.label_title.pack()
         self.label_detail.pack()
         self.button4.pack()
+
     def Type5_brief(self):
         self.frame = tk.LabelFrame(self.master, text= 'Type5',pady=10, padx=5)
         self.label_title = tk.Message(self.frame, text= "The INVESTIGATOR", font= ['Arail',30,'bold'],width=750)
@@ -278,6 +262,7 @@ class LastThreeChoice:
         self.label_title.pack()
         self.label_detail.pack()
         self.button5.pack()
+
     def Type6_brief(self):
         self.frame = tk.LabelFrame(self.master, text= 'Type6',pady=10, padx=5)
         self.label_title = tk.Message(self.frame, text= "The LOYALIST", font= ['Arail',30,'bold'], width=750)
@@ -288,6 +273,7 @@ class LastThreeChoice:
         self.label_title.pack()
         self.label_detail.pack()
         self.button6.pack()
+
     def Type7_brief(self):
         self.frame = tk.LabelFrame(self.master, text= 'Type7',pady=10, padx=5)
         self.label_title = tk.Message(self.frame, text= "The ENTHUSIAST", font= ['Arail',30,'bold'],width=750)
@@ -298,6 +284,7 @@ class LastThreeChoice:
         self.label_title.pack()
         self.label_detail.pack()
         self.button7.pack()
+
     def Type8_brief(self):
         self.frame = tk.LabelFrame(self.master, text= 'Type8',pady=10, padx=5)
         self.label_title = tk.Message(self.frame, text= "The CHALLENGER", font= ['Arail',30,'bold'],width=750)
@@ -308,6 +295,7 @@ class LastThreeChoice:
         self.label_title.pack()
         self.label_detail.pack()
         self.button8.pack()
+
     def Type9_brief(self):
         self.frame = tk.LabelFrame(self.master, text= 'Type9',pady=10, padx=5)
         self.label_title = tk.Message(self.frame, text= "The PEACEMAKER", font= ['Arail',30,'bold'],width=750)
@@ -318,10 +306,12 @@ class LastThreeChoice:
         self.label_title.pack()
         self.label_detail.pack()
         self.button9.pack()
+
     def clear_widgets(self):
         # Destroy all widgets in the current window
         for widget in self.master.winfo_children():
             widget.destroy()
+
     def press_chooseType1(self):
         self.clear_widgets()
         self.Type_title = tk.Label(self.master, text='TYPE 1 - THE REFORMER', font= ['Arial', 30, 'bold'])
@@ -353,6 +343,7 @@ class LastThreeChoice:
         self.advice1.pack()
         self.advice2.pack()
         self.advice3.pack()
+
     def press_chooseType2(self):
         self.clear_widgets()
         self.Type_title = tk.Label(self.master, text='TYPE 2 - THE HELPER', font= ['Arial', 30, 'bold'])
@@ -372,7 +363,6 @@ class LastThreeChoice:
         self.advice3 = tk.Message(self.advice_box, text = 'Limit the amount of hours you spend at work. When you are off, spend time on yourself instead of with others.', width = 800, justify='center', font=['Arial',18], fg= 'cyan4')
         self.advice4 = tk.Message(self.advice_box, text = 'Prioritize yourself when it comes to finances. Understand that spending too much on others can be hurting you. If being loved and liked is your motivator, reframe. Think of how not being financially savvy can make others feel. The people you love don’t want you to hurt. Let those around you motivate you to improve your finances.', width = 800, justify='center', font=['Arial',18], fg= 'cyan4')
         self.advice5 = tk.Message(self.advice_box, text = 'Get an accountability partner! 2s are motivated by others and some have reported that it helps to do the weekly budget with a spouse via a ‘date night’. Set challenges and share your goals and successes with each other.', width = 800, justify='center', font=['Arial',18], fg= 'cyan4')
-
 
         self.Type_title.pack()
         self.brief_box.pack(padx = 200,pady = 10, fill= 'x',ipady=10,ipadx=10)
@@ -421,6 +411,7 @@ class LastThreeChoice:
         self.advice1.pack()
         self.advice2.pack()
         self.advice3.pack()
+
     def press_chooseType4(self):
         self.clear_widgets()
         self.Type_title = tk.Label(self.master, text='TYPE 4 -THE INDIVIDUALISTS', font= ['Arial', 30, 'bold'])
@@ -450,6 +441,7 @@ class LastThreeChoice:
         self.advice_title.pack()
         self.advice1.pack()
         self.advice2.pack()
+
     def press_chooseType5(self):
         self.clear_widgets()
         self.Type_title = tk.Label(self.master, text='TYPE 5 - THE INVESTIGATOR', font= ['Arial', 30, 'bold'])
@@ -479,6 +471,7 @@ class LastThreeChoice:
         self.advice_title.pack()
         self.advice1.pack()
         self.advice2.pack()
+
     def press_chooseType6(self):
         self.clear_widgets()
         self.Type_title = tk.Label(self.master, text='TYPE 6 - THE LOYALIST', font= ['Arial', 30, 'bold'])
@@ -497,7 +490,6 @@ class LastThreeChoice:
         self.advice2 = tk.Message(self.advice_box, text = 'Type 6s are uncomfortable with promotions and career changes. However, they are typically great at what they do. Have the courage to ask for a promotion. Reframe it as ensuring finance security and wealth in the future. Use financial security as a motivator to earn more.', width=800, justify='center', font=['Arial',18], fg= 'cyan4')
         self.advice3 = tk.Message(self.advice_box, text = 'Type 6s tend to worry about not having enough for retirement or their kid’s college. Perhaps looking into how Bonds can help with paying for both would calm a 6s nerves.', width = 800, justify='center', font=['Arial',18], fg= 'cyan4')
         self.advice4 = tk.Message(self.advice_box, text = 'Don’t let fear overcome your finances. Try a set-it-and-forget it strategy with investing and budgeting. Then avoid checking in every single day.', width = 800, justify='center', font=['Arial',18], fg= 'cyan4')
-
 
         self.Type_title.pack()
         self.brief_box.pack(padx = 200,pady = 10, fill= 'x',ipady=10,ipadx=10)
@@ -543,6 +535,7 @@ class LastThreeChoice:
         self.advice_title.pack()
         self.advice1.pack()
         self.advice2.pack()
+
     def press_chooseType8(self):
         self.clear_widgets()
         self.Type_title = tk.Label(self.master, text='TYPE 8 - THE CHALLENGER', font= ['Arial', 30, 'bold'])
@@ -574,6 +567,7 @@ class LastThreeChoice:
         self.advice1.pack()
         self.advice2.pack()
         self.advice3.pack()
+
     def press_chooseType9(self):
         self.clear_widgets()
         self.Type_title = tk.Label(self.master, text='TYPE 9 - THE PEACEMAKER', font= ['Arial', 30, 'bold'])
@@ -592,7 +586,6 @@ class LastThreeChoice:
         self.advice2 = tk.Message(self.advice_box, text = 'Like type 2s, type 9s will benefit from having a friend hold their hand. Budgeting dates work best for a type 9. Creating finance goals and having an accountability partner is helpful too. Pick someone who is more go-getter than you, not another peacemaker. My husband is actually a Type 9 through and through. It works out really well for us. He lets me (a type 1) formulate the budget, and then he goes through and adds and subtracts from it as needed. I am crucial to getting the job started, but I need him to curate it for me in an intentional way.', width=800, justify='center', font=['Arial',18], fg= 'cyan4')
         self.advice3 = tk.Message(self.advice_box, text = 'These self-less creatures name gifts as an expenditure that gives them joy. Create a ‘fun money’ category in your budget.', width = 800, justify='center', font=['Arial',18], fg= 'cyan4')
         self.advice4 = tk.Message(self.advice_box, text = 'Definitely budget! 9s seek inner peace and having a budget set every month actually calms them down since there is a plan set out for them.', width = 800, justify='center', font=['Arial',18], fg= 'cyan4')
-
 
         self.Type_title.pack()
         self.brief_box.pack(padx = 200,pady = 10, fill= 'x',ipady=10,ipadx=10)
@@ -613,8 +606,6 @@ def main():
     root = tk.Tk()
     ennea_finance_explorer_app = EnneaFinanceExplorer(root)
     root.mainloop()
-
-
 
 #if __name__ == '__main__':
 main()
